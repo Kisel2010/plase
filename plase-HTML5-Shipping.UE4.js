@@ -1133,7 +1133,7 @@ $(document).ready(function() {
 				return { db: db, wasmBytes: wasmBytes, fromIndexedDB: true };
 			});
 		}).catch(function() {
-			return download(Module.locateFile('UE4Game-HTML5-Shipping.wasm'), 'arraybuffer').then(function(wasmBytes) {
+			return download(Module.locateFile('https://dl.dropboxusercontent.com/s/6k844i8o7d5z0yr/UE4Game-HTML5-Shipping.wasm?dl=0'), 'arraybuffer').then(function(wasmBytes) {
 				return { db: db, wasmBytes: wasmBytes, fromIndexedDB: false };
 			});
 		});
@@ -1167,9 +1167,9 @@ $(document).ready(function() {
 			});
 */
 // Instead as a fallback, download as ArrayBuffer. (TODO: Figure out the bugs with the above, and switch to using that one instead)
-			fetchOrDownloadAndStore(db, Module.locateFile('plase-HTML5-Shipping.data'), 'arraybuffer').then(function(dataArrayBuffer) {
+			fetchOrDownloadAndStore(db, Module.locateFile('https://dl.dropboxusercontent.com/s/gt4l49235j6nu64/plase-HTML5-Shipping.data?dl=0'), 'arraybuffer').then(function(dataArrayBuffer) {
 				Module['preloadedPackages'] = {};
-				Module['preloadedPackages'][Module.locateFile('plase-HTML5-Shipping.data')] = dataArrayBuffer;
+				Module['preloadedPackages'][Module.locateFile('https://dl.dropboxusercontent.com/s/gt4l49235j6nu64/plase-HTML5-Shipping.data?dl=0')] = dataArrayBuffer;
 				return dataJsDownload.then(addScriptToDom);
 			});
 
